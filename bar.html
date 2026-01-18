@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar | Objednávky</title>
+    <link rel="stylesheet" href="css/kitchen-page.css">
+</head>
+<body>
+    <img src="photos/backgroundLogo.png" alt="LogoBackground" class="background-logo">
+    
+    <h1 style="text-align: center; color: white; margin-top: 20px;">BAR - OBJEDNÁVKY</h1>
+
+    <div id="orders-display-grid" class="orders-display-grid"></div>
+
+    <script type="module">
+        import { db } from 'script/firebase-config.js';
+        import { collection, query, orderBy, onSnapshot, doc, updateDoc } 
+        from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const MOJA_SEKCIA = 'bar'; 
+        const displayGrid = document.getElementById('orders-display-grid');
+
+        const q = query(collection(db, "orders"), orderBy("cas", "asc"));
+
+        onSnapshot(q, (snapshot) => {
+            displayGrid.innerHTML = "";
+            
+            snapshot.forEach((prikaz) => {
+                const data = prikaz.data();
+                const id = prikaz.id;
+
+                const polozkyPreMna = data.polozky.filter(p => p.dest === MOJA_SEKCIA);
+
+                if (!data.hiddenForBar && polozkyPreMna.length > 0) {
+                    vytvorKartuObjednavky(id, data.stol, polozkyPreMna, data.cas);
+                }
+            });
+        });
+
+        function vytvorKartuObjednavky(id, stol, polozky, cas) {
+            const karta = document.createElement('div');
+            karta.className = 'order-card';
+            
+            const casText = cas ? new Date(cas.seconds * 1000)
+              .toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...';
+
+            let zoznamJedal = polozky.map(p => `
+                <div class="order-item">
+                    <span class="count">${p.mnozstvo}x</span>
+                    <span class="name">${p.nazov}</span>
+                    ${p.note ? `<br><small style="color: #e67e22;">Poznámka: ${p.note}</small>` : ''}
+                </div>
+            `).join('');
+
+            karta.innerHTML = `
+                <div class="order-header">
+                    <span class="table-badge">STÔL ${stol}</span>
+                    <span class="order-time">${casText}</span>
+                </div>
+                <div class="order-body">
+                    ${zoznamJedal}
+                </div>
+                <button class="complete-btn" onclick="vybavit('${id}')">VYBAVENÉ</button>
+            `;
+            displayGrid.appendChild(karta);
+        }
+
+        window.vybavit = async (id) => {
+          try {
+              await updateDoc(doc(db, "orders", id), {
+                  hiddenForBar: true
+              });
+          } catch (error) {
+              console.error("Chyba pri aktualizácii:", error);
+          }
+        };
+    </script>
+</body>
+</html>

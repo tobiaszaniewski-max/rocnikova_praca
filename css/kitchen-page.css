@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body{
+  background-color: rgb(43, 43, 43);
+  
+}
+.background-logo {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 40%;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.order-grid{
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  }
+.order-kitchen{
+  flex:1;
+  width: 50px;
+  background-color: rgb(113, 113, 113);
+  border-style: solid;
+  border-color: rgb(183, 183, 183);
+  border-width: 10spx;
+  border-radius: 10px;
+
+}
+
+.orders-display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.order-header {
+    background: #f8f9fa;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.table-badge {
+    background: #2c3e50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.order-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.order-item {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 10px;
+}
+
+.order-item .count {
+    font-weight: 800;
+    color: #e74c3c;
+}
+
+.complete-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.complete-btn:hover {
+    background: #2ecc71;
+}

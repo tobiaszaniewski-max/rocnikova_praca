@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Restaurant</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <img src="photos/backgroundLogo.png" alt="LogoBackground" class="background-logo">
+
+    <div class="login-container">
+        <img src="photos/logo-dark.png" alt="Logo" class="login-logo">
+
+        <form id="login-form">
+            <input type="email" id="email" placeholder="E-mail" required class="input-login">
+            <input type="password" id="password" placeholder="Heslo" required class="input-login">
+            
+            <div id="error-msg" style=" margin-bottom: 10px; font-size: 0.9rem;"></div>
+            
+            <button type="submit">Prihlásiť sa</button>
+        </form>
+    </div>
+    <script type="module" src="script/login.js"></script>
+</body>
+</html>

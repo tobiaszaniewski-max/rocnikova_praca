@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Objednávky - U Hromadov</title>
+  <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+<img src="/photos/backgroundLogo.png" alt="LogoBackground" class="background-logo">
+<div class="header-filling">
+<header class="top-bar">
+  <button class="menu-btn">☰</button>
+  <div class="table-number"></div>
+  <button id="logout-btn"  class="waiter-name"></button>
+</header>
+</div>
+<main>
+  <section class="tables " id="tables">
+    <h2 class="table-text">Vyber stôl</h2>
+    <div class="tables-grid">
+      <button id="table-1-vnutro" class="table-btn" data-table="1-Vnútro">1-Vnútro</button>
+      <button id="table-2-vnutro" class="table-btn" data-table="2-Vnútro">2-Vnútro</button>
+      <button id="table-3-vnutro" class="table-btn" data-table="3-Vnútro">3-Vnútro</button>
+      <button id="table-4-vnutro" class="table-btn" data-table="4-Vnútro">4-Vnútro</button>
+      <button id="table-5-vnutro" class="table-btn" data-table="5-Vnútro">5-Vnútro</button>
+      <button id="table-6-vnutro" class="table-btn" data-table="6-Vnútro">6-Vnútro</button>
+      <button id="table-7-vnutro" class="table-btn" data-table="7-Vnútro">7-Vnútro</button>
+      <button id="table-8-vnutro" class="table-btn" data-table="8-Vnútro">8-Vnútro</button>
+      <button id="table-9-vnutro" class="table-btn" data-table="9-Vnútro">9-Vnútro</button>
+      <button id="table-10-vnutro" class="table-btn" data-table="10-Vnútro">10-Vnútro</button>
+      
+      <button id="table-1-terasa" class="table-btn" data-table="1-Terasa">1-Terasa</button>
+      <button id="table-2-terasa" class="table-btn" data-table="2-Terasa">2-Terasa</button>
+      <button id="table-3-terasa" class="table-btn" data-table="3-Terasa">3-Terasa</button>
+      <button id="table-4-terasa" class="table-btn" data-table="4-Terasa">4-Terasa</button>
+      <button id="table-5-terasa" class="table-btn" data-table="5-Terasa">5-Terasa</button>
+      <button id="table-6-terasa" class="table-btn" data-table="6-Terasa">6-Terasa</button>
+      <button id="table-7-terasa" class="table-btn" data-table="7-Terasa">7-Terasa</button>
+      <button id="table-8-terasa" class="table-btn" data-table="8-Terasa">8-Terasa</button>
+      
+      <button id="table-1-zahrada" class="table-btn" data-table="1-Záhrada">1-Záhrada</button>
+      <button id="table-2-zahrada" class="table-btn" data-table="2-Záhrada">2-Záhrada</button>
+    </div>
+  </section>
+
+  <div class="main-menu hidden">
+    <button id="barid" class="food-menu-btn">Bar</button>
+    <button id="foodid" class="food-menu-btn">Jedlo</button>
+    <button id="pizzaid" class="food-menu-btn">Pizza</button>
+    <button id="menuid" class="food-menu-btn">Menu</button>
+  </div>
+
+  <div class="food-separation hidden">
+    <div class="food-grid ">
+      <button id="soupid" class="food-grid-button">Polievky</button>
+      <button id="dishid" class="food-grid-button">Hlavné jedlá</button>
+      <button id="loksaid" class="food-grid-button">Lokše</button>
+      <button id="potato-pancakeid" class="food-grid-button">Zem. placky</button>
+      <button id="hamburgerid" class="food-grid-button">Hamburgery</button>
+      <button id="sulanceid" class="food-grid-button">Šúľance</button>
+      <button id="kolacikid" class="food-grid-button">Koláč</button>
+      <button id="chutovkyid" class="food-grid-button">Chuťovky</button>
+    </div>
+    
+    <div class="soup dishes-grid hidden">
+      <button class="dish-grid-button" data-input="vyvar-input" data-name="Vývar" data-price="3.30">Vývar</button>
+      <div class="soup-edit hidden">
+        <button class="size-soup-button only-order" data-name="Vývar 0,3l" data-price="3.30">0,3l</button>
+        <input class="edit-soup-input" id="vyvar-input" type="text" placeholder="Úprava">
+      </div>
+
+      <button class="dish-grid-button" data-input="cesnacka-input" data-name="Cesnačka" data-price="3.90">Cesnačka</button>
+      <div class="soup-edit hidden">
+          <button class="size-soup-button" data-name="Cesnačka 0,3l" data-price="3.90">0,3l</button> 
+        <input class="edit-soup-input" id="cesnacka-input" type="text" placeholder="Úprava">
+      </div>
+
+      <button class="dish-grid-button" data-input="drzkova-input" data-name="Držková" data-price="4.50">Držková</button>
+      <div class="soup-edit hidden">
+        <div class="size-sidebyside">
+          <button class="size-soup-button" data-name="Držková 0,3l" data-price="4.50">0,3l</button>
+          <button class="size-soup-button" data-name="Držková 0,5l" data-price="5.90">0,5l</button>
+        </div>
+        <input class="edit-soup-input" id="drzkova-input" type="text" placeholder="Úprava">
+      </div>
+
+      <button class="dish-grid-button" data-input="fazulova-input" data-name="Fazuľovica" data-price="4.50">Fazuľovica</button>
+      <div class="soup-edit hidden">
+        <div class="size-sidebyside">
+          <button class="size-soup-button" data-name="Fazuľová 0,3l" data-price="4.50">0,3l</button>
+          <button class="size-soup-button" data-name="Fazuľová 0,5l" data-price="5.90">0,5l</button>
+        </div>
+        <input class="edit-soup-input" id="fazulova-input" type="text" placeholder="Úprava">
+      </div>
+
+      <button class="dish-grid-button" data-input="kapustnica-input" data-name="Kapustnica" data-price="4.50">Kapustnica</button>
+      <div class="soup-edit hidden">
+        <div class="size-sidebyside">
+          <button class="size-soup-button" data-name="Kapustnica 0,3l" data-price="4.50">0,3l</button>
+          <button class="size-soup-button" data-name="Kapustnica 0,5l" data-price="5.90">0,5l</button>
+        </div>
+        <input class="edit-soup-input" id="kapustnica-input" type="text" placeholder="Úprava">
+      </div>
+    </div>
+
+    
+        <div class="dish dishes-grid hidden">
+          <button class="dish-grid-button" id="side-approved" data-name="Černohorský bravčový rezeň" data-price="9.50">Černohorský bravčový rezeň</button>
+          <button class="dish-grid-button" id="side-approved" data-name="Pastiersky syr" data-price="8.90">Pastiersky syr</button>
+          <button class="dish-grid-button" id="side-approved" data-name="Kuracie na nive" data-price="8.90">Kuracie na nive</button>
+          <button class="dish-grid-button" data-name="Bryndzové halušky" data-price="8.90">Bryndzové halušky</button>
+          <button class="dish-grid-button" data-name="Domáca huspenina" data-price="5.50">Domáca huspenina</button>
+          <button class="dish-grid-button" data-name="Čičmanská špecialita" data-price="10.50">Čičmanská špecialita</button>
+          <input type="text" placeholder="Úprava" class="edit-input" id="main-dish-edit-input">
+        </div>
+
+        <div class="sides hidden">
+          <div class="sides-separation ">
+            <button id="hranolky-id" class="sides-button" data-name="Hranolky" data-price="0.00">Hranolky</button>
+            <button id="ryza-id" class="sides-button" data-name="Ryža" data-price="0.00">Ryža</button>
+            <button id="opek-zemiaky-id" class="sides-button" data-name="Opekané zemiaky" data-price="0.00">Opekané zemiaky</button>
+            <button id="var-zemiaky-ids" class="sides-button" data-name="Varené zemiaky" data-price="0.00">Varené zemiaky</button>
+            <input type="text" placeholder="Úprava" class="edit-input" id="side-edit-input">
+
+          </div>
+        </div>
+
+    <div class="loksa dishes-grid hidden">
+      <button class="dish-grid-button" data-name="Lokše s kyslou kapustou" data-price="4.50">Lokše s kyslou kapustou</button>
+      <button class="dish-grid-button" data-name="Lokše s makovou plnkou" data-price="4.50">Lokše s makovou plnkou</button>
+      <input type="text" placeholder="Úprava" class="edit-input" id="main-dish-edit-input">
+    </div>
+
+    <div class="potato-pancake dishes-grid hidden">
+      <button class="dish-grid-button" data-name="Zemiaková placka" data-price="5.50">Zemiaková placka</button>
+      <button class="dish-grid-button" data-name="Zemiaková placka s oškvarkami" data-price="6.50">Zemiaková placka s oškvarkami</button>
+      <button class="dish-grid-button" data-name="Zakysanka" data-price="1.50">Zakysanka</button>
+      <button class="dish-grid-button" data-name="Zakysanka s cesnakom" data-price="1.70">Zakysanka s cesnakom</button>
+      <input type="text" placeholder="Úprava" class="edit-input" id="main-dish-edit-input">
+    </div>
+
+    <div class="hamburger dishes-grid hidden">
+      <button class="dish-grid-button" data-name="Barbecue hamburger" data-price="10.90">Barbecue hamburger (krkovička)</button>
+      <button class="dish-grid-button" data-name="Jalapenos hamburger" data-price="10.90">Jalapenos hamburger (krkovička)</button>
+      <button class="dish-grid-button" data-name="Slaninový hamburger" data-price="10.90">Slaninový hamburger (krkovička)</button>
+      <input type="text" placeholder="Úprava" class="edit-input" id="main-dish-edit-input">
+
+    </div>
+
+    <div class="sulance dishes-grid hidden">
+      <button class="dish-grid-button" data-name="Makové šulance" data-price="?">Makové šulance</button>
+      <button class="dish-grid-button" data-name="Karamelové šulance" data-price="?">Orechové šulance</button>
+      <button class="dish-grid-button" data-name="Orechové šúlance" data-price="?">Karamelové šulance</button>
+
+      <input class="edit-input" id="sulance-edit" type="text" placeholder="Úprava">
+
+    </div>
+
+    <div class="kolacik dishes-grid hidden">
+        <button class="dish-grid-button" data-name="Kolačik" data-price="?">Kolačik</button>
+        <input class="edit-input" id="kolacikchose" type="text" placeholder="Kolačik">
+    </div>
+
+    <div class="chutovky dishes-grid hidden">
+      <button class="dish-grid-button" data-name="Hranolky" data-price="2.90">Hranolky</button>
+      <button class="dish-grid-button" data-name="Batatové hranolky" data-price="3.90">Batatové hranolky</button>
+      <button class="dish-grid-button" data-name="Ryža" data-price="?">Ryža</button>
+      <button class="dish-grid-button" data-name="Varené zemiaky" data-price="?">Varené zemiaky</button>
+      <button class="dish-grid-button" data-name="Pečené zemiaky" data-price="?">Pečené zemiaky</button>
+      <button class="dish-grid-button" data-name="Kečup" data-price="?">Kečup</button>
+      <button class="dish-grid-button" data-name="Tatarská omáčka" data-price="?">Tatarská omáčka</button>
+      <button class="dish-grid-button" data-name="Čili" data-price="?">Čili</button>
+      <button class="dish-grid-button" data-name="Horčicový Dip" data-price="?">Horčicový Dip</button>
+      <input type="text" placeholder="Úprava" class="edit-input" id="main-dish-edit-input">
+    </div>
+
+
+  </div>
+
+<div class="pizza-hiddden hidden">
+  <div class="pizza-grid ">
+    <button class="dish-grid-button" data-name="Pizza Margerita" data-price="8.00">Margerita</button>
+    <button class="dish-grid-button" data-name="Pizza Štyri druhy syra" data-price="10.50">Štyri druhy syra</button>
+    <button class="dish-grid-button" data-name="Pizza Havaj" data-price="9.50">Havaj</button>
+    <button class="dish-grid-button" data-name="Pizza Šunková s kukuricou" data-price="9.00">Šunková s kukuricou</button>
+    <button class="dish-grid-button" data-name="Pizza Šunková so slaninou" data-price="9.50">Šunková so slaninou</button>
+    <button class="dish-grid-button" data-name="Pizza Šunková s Chorizzom" data-price="10.50">Šunková s Chorizzom</button>
+    <button class="dish-grid-button" data-name="Pizza Chorizzo" data-price="10.50">Chorizzo</button>
+    <button class="dish-grid-button" data-name="Pizza Barbecue" data-price="10.90">Barbecue</button>
+    <button class="dish-grid-button" data-name="Pizza Kuracia s kukuricou" data-price="10.50">Kuracia s kukuricou</button>
+    <button class="dish-grid-button" data-name="Pizza Gazdovská" data-price="11.50">Gazdovská</button>
+    <button class="dish-grid-button" data-name="Pizza Drevorubač" data-price="11.50">Drevorubač</button>
+    <button class="dish-grid-button" data-name="Pizza Freš" data-price="11.50">Freš pizza</button>
+    <button class="dish-grid-button" data-name="Pizza Balkánska" data-price="10.90">Balkánska</button>
+    <button class="dish-grid-button" data-name="Pizza Mäsové hody" data-price="12.50">Mäsové hody</button>
+    <button class="dish-grid-button" data-name="Pizza Pastierska" data-price="12.50">Pastierska</button>
+    <button class="dish-grid-button" data-name="Pizza Oheň" data-price="10.50">Oheň - pálivá</button>
+    <button class="dish-grid-button" data-name="Pizza S karamelizovanou cibuľkou" data-price="11.90">S kar. cibuľkou</button>
+    <button class="dish-grid-button" data-name="Pizza Jalapenos" data-price="11.50">Jalapenos pizza</button>
+    <button class="dish-grid-button" data-name="Pizza Smotanovo-cibuľková" data-price="12.50">Smotanovo-cibuľková</button>
+    <button class="dish-grid-button" data-name="Pizza Tyčinky cesnakové" data-price="5.50">Tyčinky cesnakové</button>
+    <button class="dish-grid-button" data-name="Pizza Syrový posúch" data-price="6.40">Syrový posúch</button>
+    <button class="dish-grid-button" data-name="Pizza Oškvarkový posúch" data-price="6.90">Oškvarkový posúch</button>
+    <button class="dish-grid-button" data-name="Pizza s trhanou krkovičkou" data-price="12.90">S trhanou krkovičkou</button>
+    <button class="dish-grid-button" data-name="Pizza Šťavnatá slaninová" data-price="11.50">Šťavnatá slaninová</button>
+  </div>
+  <div class="last-button">
+    <button id="last-button"  data-name="Pizza Gorgonzola" data-price="11.90">Gorgonzola</button>
+  </div>
+</div>
+  <div class="hidden addons">
+    <div class="addons-grid">
+  <div>
+    <label class="extra-option">
+      <input type="checkbox" value="sampinony" data-name="Šampiňóny" data-price="0.70" id="sampinony-check">
+      <span class="checkbox">Šampiňóny</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="CierneOlivy" data-name="Čierne olivy" data-price="0.70" id="cierneolivy-check">
+      <span class="checkbox">Čierné olivy</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="ZeleneOlivy" data-name="Zelené olivy" data-price="0.70" id="zeleneolivy-check">
+      <span class="checkbox">Zelené olivy</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Vajce" data-name="Vajce" data-price="0.70" id="vajce-check">
+      <span class="checkbox">Vajce</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Kapia" data-name="Kapia" data-price="0.70" id="kapia-check">
+      <span class="checkbox">Kapia</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="kukurica" data-name="Kukurica" data-price="0.70" id="kukurica-check">
+      <span class="checkbox">Kukurica</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="BaranieRohy" data-name="Baranie rohy" data-price="0.70" id="baranierohy-check">
+      <span class="checkbox">Baranie rohy</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="CervenaCibula" data-name="Červená cibuľa" data-price="0.70" id="cervenacibula-check">
+      <span class="checkbox">Červená cibuľa</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Brokolica" data-name="Brokolica" data-price="0.80" id="brokolica-check">
+      <span class="checkbox">Brokolica</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Ananas" data-name="Ananás" data-price="0.80" id="ananas-check">
+      <span class="checkbox">Ananás</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Rajciny" data-name="Rajčiny" data-price="0.80" id="rajciny-check">
+      <span class="checkbox">Rajčiny</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="SuseneRajciny" data-name="Sušené rajčiny" data-price="1.20" id="susenerajciny-check">
+      <span class="checkbox">Sušené Rajčiny</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="CiliOmacka" data-name="Čili omáčka" data-price="0.70" id="ciliomacka-check">
+      <span class="checkbox">Čili omáčka</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="FeferonovyZaklad" data-name="Feferónový základ" data-price="0.70" id="feferonovy-check">
+      <span class="checkbox">Feferónový základ</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="RajcinovyZaklad" data-name="Rajčinový základ" data-price="0.70" id="rajcinovy-check">
+      <span class="checkbox">Rajčinový základ</span>
+    </label>
+  </div>
+
+  <div>
+    <label class="extra-option">
+      <input type="checkbox" value="Klobasa" data-name="Klobása" data-price="1.20" id="klobasa-check">
+      <span class="checkbox">Klobása</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Slanina" data-name="Slanina" data-price="1.20" id="slanina-check">
+      <span class="checkbox">Slanina</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Niva" data-name="Niva" data-price="1.20" id="niva-check">
+      <span class="checkbox">Niva</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Feta" data-name="Feta" data-price="1.20" id="feta-check">
+      <span class="checkbox">Feta</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Ostiepok" data-name="Oštiepok" data-price="1.20" id="ostiepok-check">
+      <span class="checkbox">Oštiepok</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Encian" data-name="Encián" data-price="1.20" id="encian-check">
+      <span class="checkbox">Encián</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Sunka" data-name="Šunka" data-price="1.40" id="sunka-check">
+      <span class="checkbox">Šunka</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Chorizzo" data-name="Chorizzo" data-price="1.40" id="chorizzo-check">
+      <span class="checkbox">Chorizzo</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="UdeneMaso" data-name="Údené mäso" data-price="1.40" id="udenemaso-check">
+      <span class="checkbox">Udené Mäso</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="BolonskaZmes" data-name="Boloňská zmes" data-price="1.60" id="bolonska-check">
+      <span class="checkbox">Boloňská Zmes</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="KuraciePrsia" data-name="Kuracie prsia" data-price="1.60" id="kuracie-check">
+      <span class="checkbox">Kuradie Prsia</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="Bryndza" data-name="Bryndza" data-price="1.60" id="bryndza-check">
+      <span class="checkbox">Bryndza</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="CiliDip" data-name="Čili Dip" data-price="1.60" id="cilidip-check">
+      <span class="checkbox">Čili Dip</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="BarbecueDip" data-name="Barbecue Dip" data-price="1.60" id="bbqdip-check">
+      <span class="checkbox">Barbecue Dip</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="CesnakovyDip" data-name="Cesnakový Dip" data-price="1.60" id="cesnakdip-check">
+      <span class="checkbox">Cesnakový Dip</span>
+    </label>
+
+    <label class="extra-option">
+      <input type="checkbox" value="HorcicovyDip" data-name="Horčicový Dip" data-price="1.60" id="horcicdip-check">
+      <span class="checkbox">Horčicový Dip</span>
+    </label>
+  </div>
+</div>
+
+    <input type="text" placeholder="Úprava" class="edit-pizza-input" id="pizza-edit-input">
+    <div class="edit-controls hidden" id="edit-controls">
+    <button class="cart-action-btn order-btn" id="save-edited-addons-btn">Uložiť zmeny</button>
+    <button class="cart-action-btn back-btn" id="cancel-edit-btn">Zrušiť</button>
+</div>
+    <div class="separation-line"></div>
+
+
+    <div class="pizza-size">
+      <button class="size-pizza-button" id="half-pizza" data-price="0.5" data-size="0.5">1/2</button>
+      <button class="size-pizza-button" id="full-pizza" data-price="1" data-size="1">1</button>
+    </div>
+    <div class="scroll-SE"></div>
+  </div>
+
+<div class="weekly-menu weekly-menu-main hidden">
+    <button data-price="8.50" data-name="Menu 1" id="menu-1" class="weekly-menu-button">1</button>
+    <button data-price="8.50" data-name="Menu 2" id="menu-2" class="weekly-menu-button">2</button>
+    <button data-price="8.50" data-name="Menu 3" id="menu-3" class="weekly-menu-button">3</button>
+    <button data-price="8.50" data-name="Menu Pizza" id="menu-pizza" class="weekly-menu-button">Menu pizza</button>
+    <button data-price="2.90" data-name="Bez hlavného jedla" id="no-soup-id" class="weekly-menu-button">Polievky</button>
+    <input class="edit-pizza-input" id="edit-menu-input" type="text" placeholder="Úprava">
+ 
+</div>
+<div class="weekly-menu weekly-menu-soups hidden">
+  <button data-name="Menu polievka" id="menu-soup" class="weekly-menu-button">Menu polievka</button>
+  <button data-name="Menu polievka plus" id="menu-soup-plus" class="weekly-menu-button">Menu polievka plus</button> 
+  <button data-price="-0.60" data-name="Bez polievky" id="no-menu-soup" class="weekly-menu-button">Bez polievky</button>
+  <input class="edit-pizza-input" id="menu-soup-edit" type="text" placeholder="Úprava">
+</div>
+
+<div class="drink-separation hidden">
+    <div class="drink-grid ">
+      <button id="pivoid" class="food-grid-button">Pivo</button>
+      <button id="vinoid" class="food-grid-button">Vino</button>
+      <button id="alkoholid" class="food-grid-button">Alkohol</button>
+      <button id="nealkoid" class="food-grid-button">Nealko</button>
+      <button id="kavaid" class="food-grid-button">Káva</button>
+      <button id="cajid" class="food-grid-button">Čaj</button>
+      <button id="limadaid" class="food-grid-button">Limonáda</button>s
+    </div>
+
+  <div class="pivo pivo-grid hidden">
+    <button class="nealko-button" data-name="Velký Bernard 11" data-price="2.60">
+    Velký Bernard 11
+    </button>
+
+    <button class="nealko-button" data-name="Malý Bernard 11" data-price="1.70">
+    Malý Bernard 11
+  </button>
+
+  <button class="nealko-button" data-name="Velký Bernard Slivka" data-price="2.60">
+    Velký Bernard Slivka
+    </button>
+
+    <button class="nealko-button" data-name="Malý Bernard Slivka" data-price="1.70">
+    Malý Bernard Slivka
+    </button>
+
+    <button class="nealko-button" data-name="Velký špeciál" data-price="2.60">
+    Velký Špeciál
+    </button>
+
+    <button class="nealko-button" data-name="Malý špeciál" data-price="1.60">
+    Malý Špeciál
+    </button>
+
+    <button class="nealko-button" data-name="Plzeň" data-price="2.80">Plzeň fľašková</button>
+
+    <button class="nealko-button" data-name="Bernard free" data-price="2.60">Bernard free fľaškový</button>
+
+    <input class="edit-input" id="vine-input" type="text" placeholder="Úprava">
+  </div>
+
+  <div class="vino vine-grid hidden">
+    <button  class="vine-button" data-name="Jahodové Rossini" data-price="3.90">
+      Jahodové Rossini
+    </button>
+    <button  class="vine-button" data-name="Glera Frizzante" data-price="10">
+      Glera Frizzante
+    </button>
+    <button  class="vine-button" data-name="Aperol Spritz" data-price="5.50">
+      Aperol Spritz
+    </button>
+    <button  class="vine-button" data-name="Hugo Spritz" data-price="3.90">
+      Hugo Spritz
+    </button>
+    <button  class="vine-button" data-name="Vetlínske Zelené" data-price="1.50">
+      Vetlínske Zelené
+    </button>
+    <button  class="vine-button" data-name="Frankovka Modra" data-price="1.50">
+      Frankovka Modra
+    </button>
+    <button  class="vine-button" data-name="Vlašský Rízling" data-price="12.90">
+      Vlašský Rízling
+    </button>
+    <button  class="vine-button" data-name="Rýnsky Rízling" data-price="12.90">
+      Rýnsky Rízling
+    </button>
+    <button  class="vine-button" data-name="Rulandské Šedé" data-price="12.90">
+      Rulandské Šedé
+    </button>
+    <button  class="vine-button" data-name="Alibernet" data-price="11.90">
+      Alibernet
+    </button>
+    <button  class="vine-button" data-name="Hubert De Luxe" data-price="3.90">
+      Hubert De Luxe
+    </button>
+    <input class="edit-input" id="vine-input" type="text" placeholder="Úprava">
+  </div>
+
+<div class="alkohol alcohol-grid hidden">
+
+  <button class="alcohol-button" data-name="Borovička s horcom 40%" data-price="2.50">
+    Borovička s horcom 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Borovička Koniferum 37.3%" data-price="2.00">
+    Borovička Koniferum 37.3%
+  </button>
+
+  <button class="alcohol-button" data-name="Slovenská Borovička 40%" data-price="1.60">
+    Slovenská Borovička 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Bošácka Slivovica 52%" data-price="2.70">
+    Bošácka Slivovica 52%
+  </button>
+
+  <button class="alcohol-button" data-name="Hruškovica Jelínek 42%" data-price="2.70">
+    Hruškovica Jelínek 42%
+  </button>
+
+  <button class="alcohol-button" data-name="Marhuľovica Jelínek 42%" data-price="2.70">
+    Marhuľovica Jelínek 42%
+  </button>
+
+  <button class="alcohol-button" data-name="Nikolaus Vodka 38%" data-price="2.00">
+    Nikolaus Vodka 38%
+  </button>
+
+  <button class="alcohol-button" data-name="Beefeater Gin 40%" data-price="2.70">
+    Beefeater Gin 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Tatranský Čaj 52%" data-price="3.00">
+    Tatranský Čaj 52%
+  </button>
+
+  <button class="alcohol-button" data-name="Jägermeister 35%" data-price="3.00">
+    Jägermeister 35%
+  </button>
+
+  <button class="alcohol-button" data-name="Jägermeister Orange 33%" data-price="2.70">
+    Jägermeister Orange 33%
+  </button>
+
+  <button class="alcohol-button" data-name="Becherovka 38%" data-price="2.50">
+    Becherovka 38%
+  </button>
+
+  <button class="alcohol-button" data-name="Fernet Stock Original 35%" data-price="2.30">
+    Fernet Stock Original 35%
+  </button>
+
+  <button class="alcohol-button" data-name="Fernet Stock Citrus 27%" data-price="2.30">
+    Fernet Stock Citrus 27%
+  </button>
+
+  <button class="alcohol-button" data-name="Karpatská Horká 25%" data-price="1.40">
+    Karpatská Horká 25%
+  </button>
+
+  <button class="alcohol-button" data-name="Captain Morgan Gold 35%" data-price="2.50">
+    Captain Morgan Gold 35%
+  </button>
+
+  <button class="alcohol-button" data-name="Tuzemský Rum 40%" data-price="1.70">
+    Tuzemský Rum 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Bumbu Rum 40%" data-price="3.70">
+    Bumbu Rum 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Diplomático Rum 40%" data-price="3.50">
+    Diplomático Rum 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Soberano 36%" data-price="2.50">
+    Soberano 36%
+  </button>
+
+  <button class="alcohol-button" data-name="Jameson 40%" data-price="3.00">
+    Jameson 40%
+  </button>
+
+  <button class="alcohol-button" data-name="Jack Daniels 40%" data-price="2.00">
+    Jack Daniels 40%
+  </button>
+
+  <input class="edit-input" id="alcohol-input" type="text" placeholder="Úprava">
+
+</div>
+
+
+  <div class="nealko nealko-grid hidden">
+
+  
+  <button class="nealko-button" data-name="Velká Kofola" data-price="2.60">
+    Velká Kofola
+  </button>
+
+  <button class="nealko-button" data-name="Malá Kofola" data-price="1.60">
+    Malá Kofola
+  </button>
+
+  <button class="nealko-button" data-name="Velká Vinea" data-price="2.60">Velká Vinea
+  </button>
+
+  <button class="nealko-button" data-name="Malá Vinea" data-price="1.60">Malá Vinea
+  </button>
+
+  <button class="nealko-button" data-name="Royal Crown Cola" data-price="2.60">
+    Royal Crown Cola
+  </button>
+
+  <button class="nealko-button" data-name="Royal Crown Cola Light" data-price="2.60">
+    Royal Crown Cola Light
+  </button>
+
+  <button id="targa" class="nealko-button" data-name="Targa Tonic" data-price="2.60">
+    Targa
+  </button>
+
+
+  <button  class="nealko-button" data-name="Red Bull" data-price="3.30">
+    Red Bull
+  </button>
+
+  <button id="rajec" class="nealko-button" data-name="Rajec Nesýtený" data-price="1.90">
+    Rajec
+  </button>
+
+
+  <button id="curiosa" class="nealko-button" data-name="Curiosa" data-price="2.60">
+    Džúsy
+  </button>
+
+  <button class="nealko-button" data-name="Soda" data-price="0.30">
+    Soda
+  </button>
+
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="soda curiosa-grid hidden">
+  <button class="nealko-button" data-objem="500" data-price="1.50">500</button>
+  <button class="nealko-button" data-objem="400" data-price="1.20">400</button>
+  <button class="nealko-button" data-objem="300" data-price="0.90">300</button>
+  <button class="nealko-button" data-objem="200" data-price="0.60">200</button>
+  <button class="nealko-button" data-objem="100" data-price="0.30">100</button>
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="curiosa curiosa-grid hidden">
+  <button class="nealko-button" data-prichut="Jahoda">Jahoda</button>
+  <button class="nealko-button" data-prichut="Jablko">Jablko</button>
+  <button class="nealko-button" data-prichut="Multivitamín">Multivitamin</button>
+  <button class="nealko-button" data-prichut="Pomaranč">Pomaranč</button>
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="rajec curiosa-grid hidden">
+  <button class="nealko-button"   data-prichut="Sýtený">Sýtený</button>
+  <button class="nealko-button"  data-prichut="Jemne sýtený">Jemne sýtený</button>
+  <button class="nealko-button"  data-prichut="Nesýtený">Nesýtený</button>
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="targa curiosa-grid hidden">
+  <button class="nealko-button"   data-prichut="Tonik">Tonik</button>
+  <button class="nealko-button"  data-prichut="Zázvorový tonik">Zázvorový tonik</button>
+  <button class="nealko-button"  data-prichut="Pomaranč">Pomaranč</button>
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="kava coffee-grid hidden">
+  <button class="coffee-button" data-name="Ristretto" data-price="2.20">Ristretto</button>
+<button class="coffee-button" data-name="Espresso" data-price="2.20">Espresso</button>
+<button class="coffee-button" data-name="Espresso Lungo" data-price="2.20">Espresso Lungo</button>
+<button class="coffee-button" data-name="Double Shot Espresso" data-price="3.00">Double Shot Espresso</button>
+<button class="coffee-button" data-name="Macchiato" data-price="2.40">Macchiato</button>
+<button class="coffee-button" data-name="Caffe Latte Macchiato" data-price="3.00">Caffe Latte Macchiato</button>
+<button class="coffee-button" data-name="Cappuccino" data-price="2.90">Cappuccino</button>
+<button class="coffee-button" data-name="Big Cappuccino" data-price="3.30">Big Cappuccino</button>
+<button class="coffee-button" data-name="Super Latte" data-price="3.50">Super Latte</button>
+<button class="coffee-button" data-name="Flat White Cappuccino" data-price="3.50">Flat White Cappuccino</button>
+<button class="coffee-button" data-name="Viedenská Káva" data-price="2.70">Viedenská Káva</button>
+<button class="coffee-button" data-name="Zalievaná Káva" data-price="2.00">Zalievaná Káva</button>
+<button class="coffee-button" data-name="Horúca Čokoláda" data-price="3.50">Horúca Čokoláda</button>
+<input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="caj nealko-grid hidden">
+  <button class="tea-button" data-name="Repíkový Čaj" data-price="3.50">Repíkový Čaj</button>
+  <button class="tea-button" data-name="Lipový Čaj" data-price="3.50">Lipový Čaj</button>
+  <button class="tea-button" data-name="Bylinkový Čaj (ručný)" data-price="3.50">Bylinkový Čaj</button>
+  <button class="tea-button" data-name="Čaj z Čerstvej Mäty" data-price="3.90">Čaj z Čerstvej Mäty</button>
+  <button class="tea-button" data-name="Čaj z Čerstvého Zázvoru" data-price="3.90">Čaj z Čerstvého Zázvoru</button>
+  <button class="tea-button" data-name="Mätovo-Zázvorový Čaj" data-price="3.90">Mätovo-Zázvorový Čaj</button>
+  <button class="tea-button" data-name="Čierny Čaj" data-price="2.50">Čierny Čaj</button>
+  <button class="tea-button" data-name="Ovocný Čaj" data-price="2.50">Ovocný Čaj</button>
+  <button class="tea-button" data-name="Zelený Čaj" data-price="2.50">Zelený Čaj</button>
+  <button class="tea-button" data-name="Bylinkový Čaj (balený)" data-price="2.50">Bylinkový Čaj</button>
+  <input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+</div>
+
+<div class="limada nealko-grid hidden">
+  <button class="limonada-button" data-name="Citronáda 300ml" data-price="1.70">Citronáda 300ml</button>
+<button class="limonada-button" data-name="Citronáda 500ml" data-price="2.60">Citronáda 500ml</button>
+<button class="limonada-button" data-name="Citronáda 1000ml" data-price="4.90">Citronáda 1000ml</button>
+<button class="limonada-button" data-name="Bylinková Malinovka" data-price="4.20">Bylinková Malinovka</button>
+<button class="limonada-button" data-name="Mätová Limonáda" data-price="4.20">Mätová Limonáda</button>
+<button class="limonada-button" data-name="Malinovo-Mätová Limonáda" data-price="4.50">Malinovo-Mätová Limonáda</button>
+<input class="edit-input" id="nealko-input" type="text" placeholder="Úprava">
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="order-button hidden">
+    <button class="order-button" id="cart">Objednávka</button>
+  </div>
+
+<div class="cart-view hidden" id="cart-view">
+  <div class="cart-header-row">
+      <h2>Prehľad objednávky</h2>
+      <button class="close-x-btn" id="close-cart-btn">✕</button>
+  </div>
+  
+  <div class="cart-items-container" id="cart-container">
+    </div>
+  
+  <div class="cart-footer">
+    <div class="total-price">Spolu: <span id="total-price-display">0.00</span> €</div>
+    <div class="cart-buttons-row">
+      <button class="cart-action-btn order-btn" id="send-order-btn">Odoslať objednávku</button>
+    </div>
+  </div>
+</div>
+
+
+</main>
+
+  <script type="module" src="script/ordering.js"></script>
+</body>
+</html>
