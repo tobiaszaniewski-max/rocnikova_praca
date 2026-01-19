@@ -22,11 +22,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-const db = getFirestore(app);
+const dl = getFirestore(app);
 const analytics = getAnalytics(app);
 
 export { app, auth, db, analytics };
 
 console.log("🔥 Firebase úspešne inicializovaný");
+
 
 
