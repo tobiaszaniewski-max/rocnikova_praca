@@ -1,11 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-
-import { initializeFirestore, terminate } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-
+import { initializeFirestore, getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBUfQ0Rb4uRGxj762Pnnhrtr2PyVET5-Os",
@@ -18,19 +13,14 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-const dd = initializeFirestore(app, {
+const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
 });
 
-const auth = getAuth(app);
-const dl = getFirestore(app);
 const analytics = getAnalytics(app);
 
 export { app, auth, db, analytics };
 
-console.log("🔥 Firebase úspešne inicializovaný");
-
-
-
-
+console.log("🔥 Firebase úspešne inicializovaný s Long Pollingom");
