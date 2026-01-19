@@ -113,7 +113,7 @@ if (logoutBtn) {
                 .then(() => {
                     localStorage.removeItem('workername');
                     
-                    window.location.href = "../index.html"; 
+                    window.location.href = "./index.html"; 
                 })
                 .catch((error) => {
                     console.error("Chyba pri odhlasovaní:", error);
@@ -863,4 +863,5 @@ function finishEditing() {
     hideAll([addons]);
     show(cartView);
     renderCart();
+
 }
