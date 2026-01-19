@@ -5,9 +5,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 import { initializeFirestore, terminate } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const dd = initializeFirestore(app, {
-  experimentalForceLongPolling: true,
-});
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBUfQ0Rb4uRGxj762Pnnhrtr2PyVET5-Os",
@@ -21,6 +19,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+const dd = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
+
 const auth = getAuth(app);
 const dl = getFirestore(app);
 const analytics = getAnalytics(app);
@@ -28,6 +30,7 @@ const analytics = getAnalytics(app);
 export { app, auth, db, analytics };
 
 console.log("🔥 Firebase úspešne inicializovaný");
+
 
 
 
