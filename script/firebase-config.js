@@ -3,6 +3,12 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
+import { initializeFirestore, terminate } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
+
 const firebaseConfig = {
   apiKey: "AIzaSyBUfQ0Rb4uRGxj762Pnnhrtr2PyVET5-Os",
   authDomain: "uhromadovpos.firebaseapp.com",
@@ -22,3 +28,4 @@ const analytics = getAnalytics(app);
 export { app, auth, db, analytics };
 
 console.log("🔥 Firebase úspešne inicializovaný");
+
