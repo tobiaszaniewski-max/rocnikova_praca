@@ -25,6 +25,9 @@ function redirectByUserRole(email) {
   } else if (email === 'adamsibik@gmail.com') {
     localStorage.setItem('workername', 'Adam');
     window.location.href = "ordering-page.html";
+  } else if (email === 'ninahromadova02@gmail.com') {
+    localStorage.setItem('workername', 'Nina');
+    window.location.href = "ordering-page.html";
   }
 }
 
@@ -79,3 +82,4 @@ loginForm.addEventListener('submit', (e) => {
       }
     });
 });
+
