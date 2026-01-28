@@ -371,8 +371,7 @@ body{
   height: 120dvh;
   grid-row-gap: 15px;
   grid-column-gap: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 15px;
 }
 
 .vine-grid{
@@ -928,3 +927,4 @@ gap: 15px;
   display: none;
 
 }
+
