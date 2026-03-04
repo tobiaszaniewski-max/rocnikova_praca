@@ -3,20 +3,6 @@ import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/fir
 import { signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { auth } from './firebase-config.js';
 
-import { auth, db } from './firebase-config.js';
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log("Používateľ overený, načítavam dáta...");
-    // Tu zavolaj funkcie, ktoré čítajú z databázy
-    nacitajMenu(); 
-  } else {
-    // Ak nie je prihlásený, pošli ho späť na login
-    window.location.href = "index.html";
-  }
-});
-
 const appState = {
   currentSection: "main",
   table: 0,
@@ -879,5 +865,6 @@ function finishEditing() {
     renderCart();
 
 }
+
 
 
